@@ -1,11 +1,11 @@
 FROM resin/rpi-raspbian:jessie
 
-# Update and Upgrade
+# Install OpenCV and python3
+
 RUN apt-get -qy update
 RUN apt-get -qy upgrade
 RUN apt-get -qy install rpi-update
 
-# Install OpenCV and python3
 RUN apt-get -qy install \
   libjpeg-dev \
   build-essential git cmake pkg-config \
@@ -37,6 +37,7 @@ RUN apt-get -qy install wget
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
   python3 get-pip.py
 
+
 RUN pip install numpy
 
 RUN cd ~/opencv && \
@@ -57,8 +58,11 @@ RUN cd ~/opencv/build && \
 RUN ldconfig
 
 # Install FFmpeg
+
 RUN echo "deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi" | sudo tee -a /etc/apt/sources.list
+
 RUN apt-get update
+
 RUN apt-get install v4l-utils libmariadbclient18 libpq5 ffmpeg
 
 # Install nano
