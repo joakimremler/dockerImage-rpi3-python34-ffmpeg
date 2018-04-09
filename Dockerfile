@@ -67,6 +67,3 @@ RUN apt-get install v4l-utils libmariadbclient18 libpq5 ffmpeg
 
 # Install nano
 RUN apt-get -qy install nano
-
-# Run Python3 as Python
-RUN echo "alias python='/usr/bin/python3.4'" >> ~/.bashrc
