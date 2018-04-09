@@ -32,26 +32,28 @@ https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-j
 https://raspberrypi.stackexchange.com/questions/69169/how-to-install-opencv-on-raspberry-pi-3-in-raspbian-jessie/69176
 https://hub.docker.com/r/rickryan/rpi-jessie-opencv3.2/
 
+### Helpers
+
 ##### Show running containers
 
 docker ps
 
 ##### Stop / cleanup
 
-####### Stop
+##### Stop
 
 * docker stop --container-id--
 
-####### Cleanup
+##### Cleanup
 
-######## Containers, networks, images, cache
+###### Containers, networks, images, cache
 
 * docker system prune
 
-####### Volumes
+##### Volumes
 
 * docker volume rm $(docker volume ls -qf dangling=true)
 
-####### Images
+##### Images
 
 * docker rmi -f $(docker images -a -q)
