@@ -66,3 +66,6 @@ RUN apt-get -qy install nano
 
 # Install rzync
 RUN apt-get -qy install rsync
+
+# Install ssh
+RUN apt-get -qy install ssh
